@@ -16,6 +16,7 @@ table , tr , td , th {
 
 table{
     background-color: plum ;
+    margin-bottom: 100px;
 }
 
 tr , td , th {

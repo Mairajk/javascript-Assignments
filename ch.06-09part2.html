@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> JS CH. 06 - 09 Part (02) </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body >
+
+    <div class="links">
+    <a target="_blank" href="./index.html" class="link"> Chapter 01 Assignment</a>
+     <a target="_blank" href="./ch.2.html" class="link">Chapter 02 Assignment</a> 
+   <a target="_blank"  href="./ch.03.html" class="link"> Chapter 03 Assignment</a>
+  <a target="_blank"  href="./ch.04.html" class="link"> Chapter 04 Assignment</a>
+ <a href="./ch.05.html"target="_blank" class="link">Chapter 05 Assignment</a>
+    <a href="./ch.06-09part1.html" target="_blank"class="link"> Chapter 06 - 09 Assignment Part ( 01 ) </a>
+</div>
+
+    <h1> JAVASCRIPT CHAPTER 06 - 09  Part ( 02 )</h1>
+
+    <h1> Marksheet Maker </h1>
+      
+    <fieldset><legend> First Subject </legend>
+
+        <input type="text" id="sub1" placeholder="Enter Subject ">
+        <input type="number"  id="marks1" placeholder=" Enter your Marks">
+    
+    </fieldset>
+
+    <fieldset><legend> Second Subject </legend>
+
+        <input type="text" id="sub2" placeholder=" Enter Subject ">
+        <input type="number" id="marks2" placeholder=" Enter Your Marks">
+    </fieldset> 
+
+
+    
+<fieldset><legend>Third Subject </legend>
+    <input type="text" id="sub3" placeholder = " Enter Subject " >
+    <input type="number"  id="marks3" placeholder=" Enter Your Marks">
+</fieldset>
+
+
+
+
+    <button onclick ="submit()" class="submit"> Submit</button>
+    
+
+    <table >
+        <th> Subjects </th>
+        <th> Obtained Marks</th>
+        <th> Total Marks</th>
+        <th> Percentage </th>
+        <tr>
+            <td id="Rsub1"> Subject 1</td>
+            <td id="Rmarks1">Marks 1</td>
+            <td id="TmarksR1"> Total Marks 1 </td>
+            <td id="Rperc1"> % </td>
+        </tr>
+
+       
+        <tr> 
+            <td id="Rsub2"> Subject 2</td>
+              <td id="Rmarks2">Marks 2</td>
+            <td id="TmarksR2"> Total Marks 2</td>
+            <td id="Rperc2"> % </td>
+        </tr>   
+
+                                                                                            
+<tr>
+    <td id="Rsub3"> Subject 3</td>
+    <td id="Rmarks3">Marks 3</td>
+    <td id="TmarksR3"> Total Marks 3</td>
+    <td id="Rperc3"> % </td>
+</tr>
+
+   
+       <tr>
+           <td> Total Marks </td>
+           <td id="ToMarks"> --- </td>
+           <td id="TmarksF"> 300 </td>
+           <td id="Tperc"> --- </td>
+       </tr>
+   
+   </table>
+   
+
+    <script>
+
+        function submit() {
+            let sub1 = document.querySelector ("#sub1").value ;
+            console.log ("subject1" , sub1) ;
+            let Rsub1 = document.querySelector("#Rsub1") ;
+            Rsub1.innerHTML = sub1 ;
+        
+           let marks1 = document.querySelector (`#marks1`).value ;
+           console.log (`marks1` , marks1);
+           let Rmarks1 = document.querySelector (`#Rmarks1`) ;
+           Rmarks1.innerHTML = marks1 ;
+
+           let Tmarks1 = 100 ;
+           let TmarksR1 = document.querySelector (`#TmarksR1`) ;
+           TmarksR1.innerHTML = Tmarks1 ; 
+
+           let perc1 = Number(marks1) / Number(Tmarks1) * 100 + `%` ;
+           console.log (perc1) ;
+           let Rperc1 = document.querySelector (`#Rperc1`) ;
+           Rperc1.innerHTML = perc1 ;
+
+
+
+
+
+
+
+           let sub2 = document.querySelector ("#sub2").value ;
+            console.log ("subject2" , sub2) ;
+            let Rsub2 = document.querySelector("#Rsub2") ;
+            Rsub2.innerHTML = sub2 ;
+        
+           let marks2 = document.querySelector (`#marks2`).value ;
+           console.log (`marks2` , marks2);
+           let Rmarks2 = document.querySelector (`#Rmarks2`) ;
+           Rmarks2.innerHTML = marks2 ;
+
+           let Tmarks2 = 100 ;
+           let  TmarksR2 = document.querySelector (`#TmarksR2`) ;
+           TmarksR2.innerHTML = Tmarks2 ; 
+
+           let perc2 = Number(marks2) / Number(Tmarks2) * 100 + `%` ;
+           console.log (perc2) ;
+           let Rperc2 = document.querySelector (`#Rperc2`) ;
+           Rperc2.innerHTML = perc2 ;
+
+
+
+           
+
+
+           let sub3 = document.querySelector ("#sub3").value ;
+            console.log ("subject3" , sub3) ;
+            let Rsub3 = document.querySelector("#Rsub3") ;
+            Rsub3.innerHTML = sub3 ;
+        
+           let marks3 = document.querySelector (`#marks3`).value ;
+           console.log (`marks3` , marks3);
+           let Rmarks3 = document.querySelector (`#Rmarks3`) ;
+           Rmarks3.innerHTML = marks3 ;
+
+           let Tmarks3 = 100 ;
+           let  TmarksR3 = document.querySelector (`#TmarksR3`) ;
+           TmarksR3.innerHTML = Tmarks3 ; 
+
+           let perc3 = Number(marks3) / Number(Tmarks3) * 100 + `%` ;
+           console.log (perc3) ;
+           let Rperc3 = document.querySelector (`#Rperc3`) ;
+           Rperc3.innerHTML = perc3 ;
+
+
+
+
+           let TobtainedMarks = Number(marks1) + Number(marks2) + Number(marks3) ;
+           let ToMarks = document.querySelector ("#ToMarks") ;
+            console.log (TobtainedMarks) ;
+            ToMarks.innerHTML =  TobtainedMarks ;
+
+
+
+            let ObtainedPerc = Number(TobtainedMarks) / 300  * 100 + `%` ;
+            console.log  (ObtainedPerc) ;
+            let Tperc = document.querySelector (`#Tperc`) ;
+            Tperc.innerHTML = ObtainedPerc ;
+
+        } ;
+
+        
+        
+
+
+    </script>
+
+    
+</body>
+</html>
+
+
+
+
+
+
+<!-- 
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+let sub2 = document.querySelector ("#sub2").value ;
+let sub3 = document.querySelector ("#sub3").value ;
+let marks2 = document.querySelector ("#marks2").value ;
+let marks3 = document.querySelector ("#marks3").value ; -->

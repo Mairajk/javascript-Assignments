@@ -1,0 +1,82 @@
+body{
+    background-color: aliceblue;
+    color: aliceblue;
+    font-size: 150%;
+}
+
+h1 {
+    color: purple;
+}
+
+table , tr , td , th {
+    border: 2px solid plum;
+    text-align: center;
+    width : 950px ;
+}
+
+table{
+    background-color: plum ;
+}
+
+tr , td , th {
+    background-color: purple;
+}
+
+fieldset {
+    background-color: purple;
+    margin: 10px;
+    width: 500px;
+    border-radius: 25px;
+    border: 5px solid plum;
+}
+
+
+legend ,input{
+    padding: 15px ;
+    border: 5px solid purple ;
+    border-radius: 30px;
+    background-color: plum;
+    color: purple;
+    font-weight: bold;
+}
+
+button.submit{
+    background-color: plum ;
+    color: aliceblue;
+    width: 130px;
+    height: 50px;
+    border: 5px solid purple;
+    font-size: 30px;
+    border-radius: 30px;
+    margin-left: 420px;
+    margin-bottom: 100px;
+    padding: 5px;
+    text-align: center;
+}
+
+a.link{
+    background-color: plum ;
+    border: 5px solid purple;
+    font-size: 30px;
+    border-radius: 30px;
+    margin-top: 20px;
+    margin-left: 20px;
+    padding: 15px;
+    text-decoration: none ;
+    color: aliceblue;
+}
+
+div.links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+ a.link:hover  {
+     background-color: purple ; 
+     border: 5px solid plum;
+}
+
+::placeholder{
+    color: purple;
+}

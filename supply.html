@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supply</title>
+</head>
+<body>
+
+    <h1>Supply</h1>
+
+
+    <script>
+        let fav = prompt(`Enter Your Favourite Snack` ) ;
+        let cAge = prompt(`Enter Your Current Age`) ;
+        let eMage = prompt(`Enter Estimated Maximam Age`) ;
+        let aSpD = prompt (`Enter Amount of Snacks Per Day`) ;
+        document.write (`<h2> Favourite Snack : ` , fav , `<h2/>` ) ;
+            document.write (`<h2> Current Age : ` , cAge , `<h2/>`) ;
+                document.write (`<h2> Estimated Maximam Age : ` , eMage , `<h2/>`) ;
+                    document.write (`<h2> Amounts of Snacks Per Day ` , aSpD , `<h2/>`) ;
+                        let amount =  ((eMage-cAge)*365) * aSpD ;
+                        console.log  (amount);
+                        document.write (`<h2>` , ` You Will Need ` , amount , ` `, fav , ` Per Day ` , `<h2/>`) ;
+    </script>
+    
+</body>
+</html>

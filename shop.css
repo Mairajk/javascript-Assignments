@@ -1,0 +1,12 @@
+table , tfoot {
+    border: 5px solid black;
+    text-align: center;
+    font-weight: bold;
+}
+
+td , th {
+    border: 2px solid gray;
+    text-align: center;
+    padding: 10px 5px;
+    min-width: 100px ;
+}

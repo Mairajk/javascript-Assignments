@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CH. 05 JS Calculator</title>
+</head>
+<body>
+
+    <h1> Calculator </h1>
+    
+    <input type="number" name="" id="num">
+    <input type="number" name="" id="num2">
+    <br>
+   
+    <h1 id="addnum"> Addition Answer  </h1>
+    <h1 id="subNum"> Subtaction Answer </h1>
+    <h1 id="multiNum"> Multiply Answer </h1>
+    <h1 id="divNum" > Divide Answer </h1>
+
+
+    <button onclick="submit()">Submit</button>
+    <br><br><br><br>
+
+    
+
+    <script>
+        function submit() {
+        let num = document.querySelector ("#num").value ;
+        let num2 = document.querySelector (`#num2`).value ;
+        let add = (Number(num) + Number(num2)) ;
+        console.log (add) ;
+        let addNum = document.querySelector(`#addnum`) ;
+        addNum.innerHTML =  (`Answer : `) + num + (` + `) + num2  + (` = `) + add  ;
+
+
+        let sub = (Number(num) - Number(num2)) ;
+        console.log (sub) ;
+        let subNum = document.querySelector(`#subNum`) ;
+       subNum.innerHTML =  (`Answer : `) + num + (` - `) + num2  + (` = `) + sub  ;
+
+
+       
+       let multi = (Number(num) * Number(num2)) ;
+        console.log (multi) ;
+        let multiNum = document.querySelector(`#multiNum`) ;
+       multiNum.innerHTML =  (`Answer : `) + num + (` x `) + num2  + (` = `) + multi  ;
+
+        
+       let div = (Number(num) / Number(num2)) ;
+        console.log (div) ;
+        let divNum = document.querySelector(`#divNum`) ;
+       divNum.innerHTML =  (`Answer : `) + num + (` / `) + num2  + (` = `) + div  ;
+
+        }
+
+    //     let variable ;
+    //    document.write (`<h1> ` + `Value after variable declaration is ` + variable + `<h1/>` ) ;
+    //     variable = 5 ; 
+    //     document.write (`<h1>` + `Initial value : ` + variable + `<h1/>`) ;
+    //     document.write (`<h1>` + `Value after increment is : ` + ++variable + `<h1/>`) ;
+    //       let  variable2 =  variable + 7 ;
+    //       document.write (`<h1>` + `Value after addition is : ` + variable2 + `<h1/>`) ;
+    //         document.write (`<h1>` + `Value after decrement is : ` + --variable2 + `<h1/>`) ;
+    //             document.write (`<h1>` + `The remainder : ` +  variable2 % 3 + `<h1/>` ) ;
+
+
+        
+
+ 
+            
+
+
+        </script>
+    
+</body>
+</html>

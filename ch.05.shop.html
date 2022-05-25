@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> JS CH. 05 Shopping Cart </title>
+    <link rel="stylesheet" href="shop.css">
+</head>
+<body>
+
+
+    <button><a href="./ch.05.html">Home</a></button>
+
+    <h1> Shopping Cart </h1>
+
+    <fieldset><legend> Item 1</legend>
+    <input type="text" name="item1" id="item1" placeholder="Enter Your Item">
+    <input type="number" name="price1" id="price1" placeholder="Enter Price">
+    <input type="number" name="quantity1" id="quantity1" placeholder="Enter Quantity">
+    </fieldset>
+
+    <br><br><br>
+
+    <fieldset><legend>Item 2</legend>
+        <input type="text" id="item2" name="item2" placeholder="Enter Your Item">
+        <input type="number" id="price2" name="price2" placeholder="Enter Price">
+        <input type="number" id="quantity2" name="quantity2" placeholder="Enter Quantity">
+    </fieldset>
+    <br>
+    <button onclick="submit()">Shop</button>
+    <br><br><br>
+
+    <table>
+        <th>Items</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Amount</th>
+        <tr>
+            <td id="tItem1" > -- </td>
+            <td id="tPrice1"> -- </td>
+            <td id="tQuantity1"> -- </td>
+            <td id="tAmount1"> -- </td>
+        </tr>
+
+        <tr>
+            <td id="tItem2" > -- </td>
+            <td id="tPrice2"> -- </td>
+            <td id="tQuantity2"> -- </td>
+            <td id="tAmount2"> -- </td>
+        </tr>
+
+        <tfoot>
+          
+            <tr>
+                <td colspan="3">Total Amount</td>
+                <!-- <td></td>
+                <td></td> -->
+                <td id="total" > -- </td>
+            </tr>
+        </tfoot>
+
+
+    </table>
+
+
+
+
+
+    <script>
+
+        function submit() {
+
+        let item1 = document.querySelector (`#item1`).value ;
+        let tItem1 = document.querySelector (`#tItem1`) ;
+        console.log ( `item1` , item1) ;
+        tItem1.innerHTML = ( item1) ;
+
+
+
+        let price1 = document.querySelector (`#price1`).value ;
+        let tPrice1 = document.querySelector (`#tPrice1`) ;
+        console.log (`price` , price1) ;
+        tPrice1.innerHTML = ( price1) + ` RS `;
+
+
+
+        
+        let quantity1 = document.querySelector (`#quantity1`).value ;
+        let tQuantity1 = document.querySelector (`#tQuantity1`) ;
+        console.log (`Quantity` , quantity1) ;
+        tQuantity1.innerHTML = (quantity1) ;
+
+
+        let tAmount1 = document.querySelector (`#tAmount1`) ;
+        tAmount1.innerHTML = Number(price1) * Number(quantity1) + ` PKR ` ;
+
+
+
+        
+        let item2 = document.querySelector (`#item2`).value ;
+        let tItem2 = document.querySelector (`#tItem2`) ;
+        console.log ( `item2` , item2) ;
+        tItem2.innerHTML = ( item2) ;
+
+
+
+        let price2 = document.querySelector (`#price2`).value ;
+        let tPrice2 = document.querySelector (`#tPrice2`) ;
+        console.log (`price` , price2) ;
+        tPrice2.innerHTML = ( price2) + ` RS `;
+
+
+
+        
+        let quantity2 = document.querySelector (`#quantity2`).value ;
+        let tQuantity2 = document.querySelector (`#tQuantity2`) ;
+        console.log (`Quantity` , quantity2) ;
+        tQuantity2.innerHTML = (quantity2) ;
+
+
+        let tAmount2 = document.querySelector (`#tAmount2`) ;
+        tAmount2.innerHTML = Number(price2) * Number(quantity2) + ` PKR ` ;
+
+
+        let total = document.querySelector (`#total`) ;
+       let addAmount = Number(tAmount1) + Number(tAmount2)  ;
+       let t = (Number(price1) *  Number(quantity1)) + (Number(price2) * Number(quantity2)) ; 
+       total.innerHTML =  t + ` PKR ` ;
+
+
+
+
+        }
+ 
+
+    </script>
+
+
+    
+</body>
+</html>

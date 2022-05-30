@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Temprature Scale </title>
+</head>
+<body>
+
+    <button><a target="_blank"  href="./ch.05.html"> Chapter 05 Assignment</a></button>
+    <br><br><br>
+
+
+    
+    <h1> Temprature Scale </h1>
+
+    <fieldset> <legend> Converter Of  <sup> o</sup>C To <sup> o</sup>F</legend>
+
+    <input type="number" id="TinC" placeholder="Enter Temprature in Celsius">
+    </fieldset>
+
+    <fieldset> <legend> Converter Of  <sup> o</sup>F To <sup> o</sup>C</legend>
+   
+    <input type="number" id="TinF" placeholder="Enter Temprature in Farenhite">
+    </fieldset>
+
+    <button onclick="submit()"> Submit</button>
+
+    <h1 id="CtoF" ></h1>
+    <h1 id="FtoC"></h1>
+
+   
+
+
+
+    <script>
+        function submit() {
+            
+        let TinC = document.querySelector (`#TinC`).value ;
+        console.log (TinC) ;
+        let convCtoF = (Number(TinC) * 9 / 5  ) + 32 ;
+        console.log (convCtoF) ;
+        let CtoF = document.querySelector (`#CtoF`) ;
+        CtoF.innerHTML = TinC + `C` + ` = ` + convCtoF +  `F `   ;
+
+
+
+        let TinF = document.querySelector (`#TinF`).value ;
+        console.log (TinF) ;
+        let convFtoC = (Number(TinF) - 32) * 5/9 ;
+        console.log (convFtoC) ;
+        let FtoC = document.querySelector (`#FtoC`) ;
+        FtoC.innerHTML = TinF + `F` + ` = ` + convFtoC + `C` ;
+        
+        }
+
+    </script>
+    
+</body>
+</html>

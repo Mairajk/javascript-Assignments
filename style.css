@@ -1,6 +1,6 @@
 body{
     background-color: aliceblue;
-    color: aliceblue;
+  
     font-size: 150%;
 }
 
@@ -21,12 +21,13 @@ table{
 
 tr , td , th {
     background-color: purple;
+    color: aliceblue;
 }
 
 fieldset {
     background-color: purple;
-    margin: 10px;
-    width: 500px;
+    margin: 30px;
+    width: 700px;
     border-radius: 25px;
     border: 5px solid plum;
 }
@@ -49,7 +50,7 @@ button.submit{
     border: 5px solid purple;
     font-size: 30px;
     border-radius: 30px;
-    margin-left: 420px;
+    margin-left: 630px;
     margin-bottom: 100px;
     padding: 5px;
     text-align: center;
@@ -80,4 +81,44 @@ div.links {
 
 ::placeholder{
     color: purple;
+}
+
+li {
+    margin: 0px auto; 
+    padding: 20px;
+}
+
+#a1 {
+    color: rgb(2, 253, 2);
+}
+
+#a {
+    color: rgb(141, 219, 24);
+}
+
+#b {
+    color: yellow;
+}
+
+#c {
+    color: gold;
+}
+
+#d {
+    color: orange;
+}
+
+#f {
+    color: red;
+}
+
+ul {
+    background-color: black;
+    width: 300px;
+    height: 400px;
+    margin-left: 50px;
+}
+
+#validation {
+    color: rgb(161, 0, 0);
 }

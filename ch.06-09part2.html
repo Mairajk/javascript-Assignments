@@ -21,31 +21,52 @@
     <h1> JAVASCRIPT CHAPTER 06 - 09  Part ( 02 )</h1>
 
     <h1> Marksheet Maker </h1>
+
+
+    <form onsubmit ="grade(); return false">
       
     <fieldset><legend> First Subject </legend>
 
-        <input type="text" id="sub1" placeholder="Enter Subject ">
-        <input type="number"  id="marks1" placeholder=" Enter your Marks">
+        <input required type="text" id="sub1" placeholder="Enter Subject " autofocus >
+        <input required type="number"  id="marks1" placeholder=" Enter Obtained Marks"  >
+        <input type="number" required id="tMarks1" placeholder="Enter Total Marks" >
     
     </fieldset>
 
     <fieldset><legend> Second Subject </legend>
 
-        <input type="text" id="sub2" placeholder=" Enter Subject ">
-        <input type="number" id="marks2" placeholder=" Enter Your Marks">
+        <input type="text" id="sub2" placeholder=" Enter Subject " >
+        <input type="number" id="marks2" placeholder=" Enter  Obtained Marks">
+        <input type="number" required id="tMarks2" placeholder="Enter Total Marks">
     </fieldset> 
 
 
     
     <fieldset><legend>Third Subject </legend>
        <input type="text" id="sub3" placeholder = " Enter Subject " >
-    <input type="number"  id="marks3" placeholder=" Enter Your Marks">
+    <input type="number"  id="marks3" placeholder=" Enter  Obtained Marks"  >
+    <input type="number" required id="tMarks3" placeholder="Enter Total Marks">
     </fieldset>
 
 
 
 
-    <button onclick ="submit()" class="submit"> Submit</button>
+    <button type="submit"  class="submit"> Submit</button>
+
+     </form>
+
+     <h2 id="validation"></h2>
+    <br><br>
+
+       <h1> Grades : </h1>
+    <ul>
+        <li id="a1"> ( 80%  -  100% )  A1 Grade </li>
+        <li id="a"> ( 70% - 79% ) A Grade </li>
+        <li id="b">( 60% - 69% ) B Grade</li>
+        <li id="c">( 50% - 59% ) C Grade</li>
+        <li id="d">( 33% - 49% ) D Grade</li>
+        <li id="f">( Less than 33% ) Fail! </li>
+    </ul>
     
 
     <table >
@@ -56,23 +77,23 @@
         <tr>
             <td id="Rsub1"> Subject 1</td>
             <td id="Rmarks1">Marks 1</td>
-            <td id="TmarksR1"> Total Marks 1 </td>
+            <td id="TmarksR1" > Total Marks 1 </td>
             <td id="Rperc1"> % </td>
         </tr>
 
        
         <tr> 
             <td id="Rsub2"> Subject 2</td>
-              <td id="Rmarks2">Marks 2</td>
-            <td id="TmarksR2"> Total Marks 2</td>
+              <td id="Rmarks2" >Marks 2</td>
+            <td id="TmarksR2" > Total Marks 2</td>
             <td id="Rperc2"> % </td>
         </tr>   
 
                                                                                             
 <tr>
     <td id="Rsub3"> Subject 3</td>
-    <td id="Rmarks3">Marks 3</td>
-    <td id="TmarksR3"> Total Marks 3</td>
+    <td id="Rmarks3" >Marks 3</td>
+    <td id="TmarksR3" > Total Marks 3</td>
     <td id="Rperc3"> % </td>
 </tr>
 
@@ -80,27 +101,127 @@
        <tr>
            <td> Total Marks </td>
            <td id="ToMarks"> --- </td>
-           <td id="TmarksF"> 300 </td>
+           <td id="TmarksF"> --- </td>
            <td id="Tperc"> --- </td>
        </tr>
    
    </table>
+
+  <h1 id="result"></h1>
    
 
     <script>
 
-        function submit() {
+        function grade() {
+
+            let marks1 = document.querySelector (`#marks1`).value ;
+           console.log (`marks1` , marks1);
+           let Tmarks1 = document.querySelector (`#tMarks1`).value ;
+
+           let marks2 = document.querySelector (`#marks2`).value ;
+           console.log (`marks2` , marks2);
+           let Tmarks2 = document.querySelector (`#tMarks2`).value ; 
+
+           let marks3 = document.querySelector (`#marks3`).value ;
+           console.log (`marks3` , marks3);
+           let Tmarks3 =  document.querySelector (`#tMarks2`).value ; 
+
+           let validation = "" ;
+
+           if (isNaN(marks1)) {
+               validation = ` Warning! ` , `<br>` , ` Please Enter Marks In Number. `
+           }
+           
+           if (isNaN(Tmarks1)) {
+               validation = ` Warning! ` , `<br>` , ` Please Enter Marks In Number. `
+           }
+
+           if ( Tmarks1  < marks1 ) {
+               validation =  ` Warning! ` , `<br>` , ` Obtained Marks Cannot Greater Than Total Marks. `
+           }
+
+           if (marks1 < 0.5 ) {
+               validation =  ` Warning! ` , `<br>` , ` Please Enter Valid Marks. `
+           }
+
+           if (Tmarks1 < 0.5 ) {
+               validation =  ` Warning! ` , `<br>` , ` Please Enter Valid Marks. `
+           }
+
+
+
+
+
+           
+           if (isNaN(marks2)) {
+               validation = ` Warning! ` , `<br>` , ` Please Enter Marks In Number. `
+           }
+           
+           if (isNaN(Tmarks2)) {
+               validation =  ` Warning! ` , `<br>` , ` Please Enter Marks In Number. `
+           }
+
+           if (Tmarks2 < marks2    ) {
+               validation = ` Warning! <br> Obtained Marks Cannot Greater Than Total Marks. `
+           }
+
+           if (marks2 < 0.5 ) {
+               validation = ` Warning! <br> Please Enter Valid Marks. `
+           }
+
+           if (Tmarks2 < 0.5 ) {
+               validation = ` Warning! <br> Please Enter Valid Marks. `
+           }
+
+
+
+
+            
+           if (isNaN(marks3)) {
+               validation = ` Warning! <br> Please Enter Marks In Number. `
+           }
+           
+           if (isNaN(Tmarks3)) {
+               validation = ` Warning! <br> Please Enter Marks In Number. `
+           }
+
+           if (Tmarks3 < marks3   ) {
+               validation = ` Warning! <br> Obtained Marks Cannot Greater Than Total Marks. `
+           }
+
+           if (marks3 < 0 ) {
+               validation = ` Warning! <br> Please Enter Valid Marks. `
+           }
+
+           if (Tmarks3 < 1 ) {
+               validation = ` Warning! <br> Please Enter Valid Marks. `
+           }
+
+         if (validation) {
+            document.querySelector(`#validation`).innerHTML = validation ;          
+         } 
+
+         else {
+             document.querySelector(`#validation`).innerText = " "
+         }
+
+
+
+   
+
+
+
+
             let sub1 = document.querySelector ("#sub1").value ;
             console.log ("subject1" , sub1) ;
             let Rsub1 = document.querySelector("#Rsub1") ;
             Rsub1.innerHTML = sub1 ;
         
-           let marks1 = document.querySelector (`#marks1`).value ;
-           console.log (`marks1` , marks1);
+          
            let Rmarks1 = document.querySelector (`#Rmarks1`) ;
            Rmarks1.innerHTML = marks1 ;
 
-           let Tmarks1 = 100 ;
+          
            let TmarksR1 = document.querySelector (`#TmarksR1`) ;
            TmarksR1.innerHTML = Tmarks1 ; 
 
@@ -113,19 +234,16 @@
 
 
 
-
-
            let sub2 = document.querySelector ("#sub2").value ;
             console.log ("subject2" , sub2) ;
             let Rsub2 = document.querySelector("#Rsub2") ;
             Rsub2.innerHTML = sub2 ;
         
-           let marks2 = document.querySelector (`#marks2`).value ;
-           console.log (`marks2` , marks2);
+         
            let Rmarks2 = document.querySelector (`#Rmarks2`) ;
            Rmarks2.innerHTML = marks2 ;
 
-           let Tmarks2 = 100 ;
+         
            let  TmarksR2 = document.querySelector (`#TmarksR2`) ;
            TmarksR2.innerHTML = Tmarks2 ; 
 
@@ -136,20 +254,17 @@
 
 
 
-           
-
-
+    
            let sub3 = document.querySelector ("#sub3").value ;
             console.log ("subject3" , sub3) ;
             let Rsub3 = document.querySelector("#Rsub3") ;
             Rsub3.innerHTML = sub3 ;
         
-           let marks3 = document.querySelector (`#marks3`).value ;
-           console.log (`marks3` , marks3);
+           
            let Rmarks3 = document.querySelector (`#Rmarks3`) ;
            Rmarks3.innerHTML = marks3 ;
 
-           let Tmarks3 = 100 ;
+          
            let  TmarksR3 = document.querySelector (`#TmarksR3`) ;
            TmarksR3.innerHTML = Tmarks3 ; 
 
@@ -161,6 +276,7 @@
 
 
 
+           let totalM = Number(Tmarks1) + Number(Tmarks2) + Number(Tmarks3) ;
            let TobtainedMarks = Number(marks1) + Number(marks2) + Number(marks3) ;
            let ToMarks = document.querySelector ("#ToMarks") ;
             console.log (TobtainedMarks) ;
@@ -168,16 +284,42 @@
 
 
 
-            let ObtainedPerc = Number(TobtainedMarks) / 300  * 100 + `%` ;
-            console.log  (ObtainedPerc) ;
+            let obtainedPerc = Number(TobtainedMarks) / Number(totalM) * 100  ;
+            console.log  (obtainedPerc) ;
             let Tperc = document.querySelector (`#Tperc`) ;
-            Tperc.innerHTML = ObtainedPerc ;
+            Tperc.innerHTML = obtainedPerc + ` %` ;
 
-        } ;
+            document.querySelector(`#TmarksF`).innerText = totalM; 
+
+
+
+            let text = document.querySelector(`#validation`).value ;
+
+            let result = " " ;
+            if (obtainedPerc < 33) {
+              result = ` Fail ! ` 
+         
+
+            } else if (obtainedPerc >= 33 && obtainedPerc < 50) { result = `Grade - D`}
+
+            else if ( obtainedPerc >= 50 && obtainedPerc < 60 ) { result = ` Grade - C`}
+
+            else if ( obtainedPerc >= 60 && obtainedPerc < 70 ) { result = ` Grade - B`}
+
+            else if ( obtainedPerc >= 70 && obtainedPerc < 80 ) { result = ` Grade - A`}
+            
+            else { result = `Grade - A1`}
+
+            console.log (result)
+
+            document.querySelector(`#result`).innerText = ` ${obtainedPerc}%  - ${ result} ` ;
+
+            
+
 
         
         
-
+    }
 
     </script>
 
@@ -185,7 +327,7 @@
 </body>
 </html>
 
-
+ 
 
 
 

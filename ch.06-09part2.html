@@ -55,7 +55,7 @@
 
      </form>
 
-     <h2 id="validation"></h2>
+     <p id="validation"></p>
     <br><br>
 
        <h1> Grades : </h1>
@@ -106,8 +106,13 @@
        </tr>
    
    </table>
-
-  <h1 id="result"></h1>
+   <!-- <p id="result"></p> -->
+  <p id="resultA1"></p>
+  <p id="resultA"></p>
+  <p id="resultB"></p>
+  <p id="resultC"></p>
+  <p id="resultD"></p>
+  <p id="resultF"></p> 
    
 
     <script>
@@ -115,16 +120,22 @@
         function grade() {
 
             let marks1 = document.querySelector (`#marks1`).value ;
-           console.log (`marks1` , marks1);
+            marks1 = Number(marks1) ;
+            console.log (`marks1` , marks1);
            let Tmarks1 = document.querySelector (`#tMarks1`).value ;
+           Tmarks1 = Number(Tmarks1) ;
 
            let marks2 = document.querySelector (`#marks2`).value ;
+           marks2 = Number(marks2) ;
            console.log (`marks2` , marks2);
-           let Tmarks2 = document.querySelector (`#tMarks2`).value ; 
+           let Tmarks2 = document.querySelector (`#tMarks2`).value ;
+            Tmarks2 = Number(Tmarks2) ; 
 
            let marks3 = document.querySelector (`#marks3`).value ;
+           marks3 = Number(marks3) ;
            console.log (`marks3` , marks3);
-           let Tmarks3 =  document.querySelector (`#tMarks2`).value ; 
+           let Tmarks3 =  document.querySelector (`#tMarks2`).value ;
+           Tmarks3 = Number(Tmarks3) ; 
 
            let validation = "" ;
 
@@ -136,7 +147,7 @@
                validation = ` Warning! ` , `<br>` , ` Please Enter Marks In Number. `
            }
 
-           if ( Tmarks1  < marks1 ) {
+           if (  marks1 > Tmarks1   ) {
                validation =  ` Warning! ` , `<br>` , ` Obtained Marks Cannot Greater Than Total Marks. `
            }
 
@@ -161,7 +172,7 @@
                validation =  ` Warning! ` , `<br>` , ` Please Enter Marks In Number. `
            }
 
-           if (Tmarks2 < marks2    ) {
+           if ( marks2 > Tmarks2 )  {
                validation = ` Warning! <br> Obtained Marks Cannot Greater Than Total Marks. `
            }
 
@@ -185,7 +196,7 @@
                validation = ` Warning! <br> Please Enter Marks In Number. `
            }
 
-           if (Tmarks3 < marks3   ) {
+           if ( marks3 > Tmarks3    ) {
                validation = ` Warning! <br> Obtained Marks Cannot Greater Than Total Marks. `
            }
 
@@ -297,22 +308,38 @@
 
             let result = " " ;
             if (obtainedPerc < 33) {
-              result = ` Fail ! ` 
-         
-
-            } else if (obtainedPerc >= 33 && obtainedPerc < 50) { result = `Grade - D`}
-
-            else if ( obtainedPerc >= 50 && obtainedPerc < 60 ) { result = ` Grade - C`}
-
-            else if ( obtainedPerc >= 60 && obtainedPerc < 70 ) { result = ` Grade - B`}
-
-            else if ( obtainedPerc >= 70 && obtainedPerc < 80 ) { result = ` Grade - A`}
+              result = ` Fail ! ${obtainedPerc} ` ;
+              document.querySelector("#resultF").innerHTML = result
+            }
             
-            else { result = `Grade - A1`}
+             else if (obtainedPerc >= 33 && obtainedPerc < 50)
+              { result = `Grade - D ${obtainedPerc} ` ; 
+                document.querySelector("#resultD").innerHTML = result
+            }
+
+            else if ( obtainedPerc >= 50 && obtainedPerc < 60 )
+             { result = ` Grade - C ${obtainedPerc} ` ; 
+                document.querySelector("#resultC").innerHTML = result
+            }
+
+            else if ( obtainedPerc >= 60 && obtainedPerc < 70 ) 
+            { result = ` Grade - B ${obtainedPerc} ` ;
+                document.querySelector("#resultB").innerHTML = result 
+            }
+
+            else if ( obtainedPerc >= 70 && obtainedPerc < 80 )
+             { result = ` Grade - A ${obtainedPerc} ` ; 
+                document.querySelector("#resultA").innerHTML = result
+            }
+            
+            else {
+                 result = `Grade - A1 ${obtainedPerc} ` ; 
+                 document.querySelector("#resultA1").innerHTML = result 
+                }
 
             console.log (result)
 
-            document.querySelector(`#result`).innerText = ` ${obtainedPerc}%  - ${ result} ` ;
+            // document.querySelector(`#result`).innerText = ` ${obtainedPerc}%  - ${ result} ` ;
 
             
 

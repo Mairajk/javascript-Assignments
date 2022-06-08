@@ -121,4 +121,98 @@ ul {
 
 #validation {
     color: rgb(161, 0, 0);
+    font-size: 50px;
+    font-weight: bold;
+    /* background-color: black; */
+}
+
+#resultF {
+    color:  red;
+    font-size: 50px;
+    font-weight: bold;
+    background-color: black;
+    border: 3px solid red;
+    border-radius: 30px;
+    padding: 10px;
+    min-width: 0px;
+    max-width: 500px;
+    margin-left: 30px;
+    box-shadow: 5px 5px 10px red;
+    text-align: center;
+}
+
+#resultD {
+    color: orange;
+    font-size: 50px;
+    font-weight: bold;
+    background-color: black;
+    border: 3px solid orange;
+    border-radius: 30px;
+    padding: 10px;
+    min-width: 0px;
+    max-width: 500px;
+    margin-left: 30px;
+    box-shadow: 5px 5px 10px orange;
+    text-align: center;
+}
+
+#resultC {
+    color:  gold;
+    font-size: 50px;
+    font-weight: bold;
+    background-color: black;
+    border: 3px solid gold;
+    border-radius: 30px;
+    padding: 10px;
+    min-width: 0px;
+    max-width: 500px;
+    margin-left: 30px;
+    box-shadow: 5px 5px 10px gold;
+    text-align: center;
+}
+
+#resultB {
+    color:  yellow;
+    font-size: 50px;
+    font-weight: bold;
+    background-color: black;
+    border: 3px solid yellow;
+    border-radius: 30px;
+    padding: 10px;
+    min-width: 0px;
+    max-width: 500px;
+    margin-left: 30px;
+    box-shadow: 5px 5px 10px yellow;
+    text-align: center;
+}
+
+#resultA {
+    color:  rgb(141, 219, 24);
+    font-size: 50px;
+    background-color: black;
+    font-weight: bold;
+    border: 3px solid rgb(141, 219, 24);
+    border-radius: 30px;
+    padding: 10px;
+    min-width: 0px;
+    max-width: 500px;
+    margin-left: 30px;
+    box-shadow: 5px 5px 10px rgb(141, 219, 24);
+    text-align: center;
+}
+
+
+#resultA1 {
+    color:  rgb(2, 253, 2);
+    font-size: 50px;
+    font-weight: bold;
+    background-color: black;
+    border: 3px solid rgb(2, 253, 2);
+    border-radius: 30px;
+    padding: 10px;
+    min-width: 0px;
+    max-width: 500px;
+    margin-left: 30px;
+    box-shadow: 5px 5px 10px rgb(2, 253, 2);
+    text-align: center;
 }
